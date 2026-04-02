@@ -1,0 +1,814 @@
+{
+  "version": "1.0",
+  "meta": {
+    "id": "10k-peak-april-2026",
+    "athlete": "Athlet",
+    "event": "10km Rennen",
+    "eventDate": "2026-04-25",
+    "planStartDate": "2026-04-03",
+    "planEndDate": "2026-05-08",
+    "createdAt": "2026-04-02T00:00:00Z",
+    "updatedAt": "2026-04-02T00:00:00Z",
+    "totalWeeks": 6,
+    "generatedBy": "Claude Coach"
+  },
+  "preferences": {
+    "swim": "meters",
+    "bike": "kilometers",
+    "run": "kilometers",
+    "firstDayOfWeek": "monday"
+  },
+  "assessment": {
+    "foundation": {
+      "raceHistory": ["Teutolauf 12km (Okt 2025, Ø HF 184)", "10km TT 49:35 (Dez 2025, Ø HF 181)", "HM 1:57 (Dez 2025)", "Trailrun 2026"],
+      "peakTrainingLoad": 16,
+      "foundationLevel": "intermediate",
+      "yearsInSport": 1.5
+    },
+    "currentForm": {
+      "weeklyVolume": { "total": 6, "swim": 0, "bike": 2, "run": 4 },
+      "longestSessions": { "swim": 0, "bike": 78, "run": 21 },
+      "consistency": 8
+    },
+    "strengths": [
+      { "sport": "run", "evidence": "10km 49:35, HM 1:57, starke anaerobe Kapazität, hohe HF-Toleranz" },
+      { "sport": "bike", "evidence": "FTP 275W, sehr hohe Sprint- und Maximalleistung" }
+    ],
+    "limiters": [
+      { "sport": "run", "evidence": "Achillessehne/Schienbein limitiert Volumen, Laufökonomie noch entwicklungsfähig" }
+    ],
+    "constraints": ["Achillessehne reaktiv", "Schienbein/Fußspannung", "tägl. Prävention Pflicht"]
+  },
+  "zones": {
+    "run": {
+      "hr": {
+        "lthr": 178,
+        "zones": [
+          { "zone": 1, "name": "Recovery", "percentLow": 0, "percentHigh": 81, "hrLow": 0, "hrHigh": 144 },
+          { "zone": 2, "name": "Aerobic", "percentLow": 81, "percentHigh": 89, "hrLow": 144, "hrHigh": 159 },
+          { "zone": 3, "name": "Tempo", "percentLow": 90, "percentHigh": 93, "hrLow": 160, "hrHigh": 165 },
+          { "zone": 4, "name": "Sub-Schwelle", "percentLow": 94, "percentHigh": 99, "hrLow": 167, "hrHigh": 176 },
+          { "zone": "5a", "name": "Schwelle", "percentLow": 100, "percentHigh": 102, "hrLow": 178, "hrHigh": 182 },
+          { "zone": "5b", "name": "VO2max", "percentLow": 103, "percentHigh": 106, "hrLow": 183, "hrHigh": 189 }
+        ]
+      },
+      "pace": {
+        "easy": "6:15–6:45/km",
+        "threshold": "5:05–5:15/km",
+        "interval": "4:45–4:55/km",
+        "race10k": "4:42–4:50/km"
+      }
+    },
+    "bike": {
+      "power": {
+        "ftp": 275,
+        "zones": [
+          { "zone": 1, "name": "Recovery", "percentLow": 0, "percentHigh": 55, "wattsLow": 0, "wattsHigh": 151 },
+          { "zone": 2, "name": "Aerobic", "percentLow": 56, "percentHigh": 75, "wattsLow": 154, "wattsHigh": 206 },
+          { "zone": 3, "name": "Tempo", "percentLow": 76, "percentHigh": 90, "wattsLow": 209, "wattsHigh": 248 },
+          { "zone": "5a", "name": "Schwelle", "percentLow": 100, "percentHigh": 105, "wattsLow": 275, "wattsHigh": 289 }
+        ]
+      }
+    }
+  },
+  "phases": [
+    {
+      "name": "Aktivierung",
+      "startWeek": 1,
+      "endWeek": 1,
+      "focus": "Vorsichtiger Wiedereinstieg post-Race, Achilles-Monitoring",
+      "weeklyHoursRange": { "low": 4, "high": 5 },
+      "keyWorkouts": ["Kurzer Temporeiz", "Easy Longrun"],
+      "physiologicalGoals": ["Achilles beruhigen", "Aerobe Basis aufrechterhalten"]
+    },
+    {
+      "name": "Schärfung",
+      "startWeek": 2,
+      "endWeek": 3,
+      "focus": "Renntempo-Arbeit, Schwellen-Intervalle, Wettkampfspezifik",
+      "weeklyHoursRange": { "low": 5, "high": 6 },
+      "keyWorkouts": ["1000m-Intervalle", "Progressiver Longrun", "Tempoläufe"],
+      "physiologicalGoals": ["Laktattoleranz schärfen", "Renntempo festigen", "Laufökonomie verbessern"]
+    },
+    {
+      "name": "Taper",
+      "startWeek": 4,
+      "endWeek": 4,
+      "focus": "Volumen runter, Intensität erhalten, frisch werden",
+      "weeklyHoursRange": { "low": 3, "high": 4 },
+      "keyWorkouts": ["Kurze scharfe Intervalle", "Aktivierungslauf"],
+      "physiologicalGoals": ["Supercompensation", "mentale Frische"]
+    },
+    {
+      "name": "Rennen & Nachbereitung",
+      "startWeek": 5,
+      "endWeek": 6,
+      "focus": "10km Hauptziel + 8km Folgeziel",
+      "weeklyHoursRange": { "low": 3, "high": 5 },
+      "keyWorkouts": ["10km Wettkampf", "8km Wettkampf"],
+      "physiologicalGoals": ["Peak-Leistung abrufen"]
+    }
+  ],
+  "weeks": [
+    {
+      "weekNumber": 1,
+      "startDate": "2026-04-03",
+      "endDate": "2026-04-09",
+      "phase": "Aktivierung",
+      "focus": "Sanfter Wiedereinstieg — Achilles beobachten, kein Stress",
+      "targetHours": 4.5,
+      "isRecoveryWeek": false,
+      "days": [
+        {
+          "date": "2026-04-03",
+          "dayOfWeek": "Freitag",
+          "workouts": [
+            {
+              "id": "w1-fri-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "Ruhetag",
+              "description": "Vollständige Erholung. Tägl. Prävention: exzentrische Wadenheben 3x15, Fußaktivierung, Mobilisation.",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-04",
+          "dayOfWeek": "Samstag",
+          "workouts": [
+            {
+              "id": "w1-sat-run",
+              "sport": "run",
+              "type": "aerobic",
+              "name": "Easy Longrun",
+              "description": "Entspannter langer Lauf ohne Druck. Achilles-Check: Wenn morgens steif, erst 5 min walken bevor du losläufst.",
+              "durationMinutes": 75,
+              "distanceMeters": 12000,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Einlaufen: 2 km sehr easy\nHauptteil: 8–10 km @ 6:15–6:45/km (HF < 160)\nAuslaufen: 2 km locker\n\n⚠️ HF-Deckel: 160 bpm. Nicht darüber. Tempo egal.",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-05",
+          "dayOfWeek": "Sonntag",
+          "workouts": [
+            {
+              "id": "w1-sun-bike",
+              "sport": "ride",
+              "type": "aerobic",
+              "name": "Zone-2-Rad",
+              "description": "Regenerative Radausfahrt oder Zwift. Beine lockern, kein Druck.",
+              "durationMinutes": 60,
+              "distanceMeters": 30000,
+              "primaryZone": "Zone 2",
+              "humanReadable": "60 min @ 154–206W (Zone 2)\nKadenz 85–95 rpm\nKein Intervall, kein Sweet Spot.",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-06",
+          "dayOfWeek": "Montag",
+          "workouts": [
+            {
+              "id": "w1-mon-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "Ruhetag",
+              "description": "Prävention täglich: exzentrische Wadenheben, Fußaktivierung, Wadenmobilisation.",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-07",
+          "dayOfWeek": "Dienstag",
+          "workouts": [
+            {
+              "id": "w1-tue-run",
+              "sport": "run",
+              "type": "tempo",
+              "name": "Temporeiz — Erst-Check Achilles",
+              "description": "Erster Qualitätslauf dieser Phase. Achilles-Status entscheidend: Bei Schmerz >3/10 → auf Tempo verzichten und als Easy laufen.",
+              "durationMinutes": 50,
+              "distanceMeters": 8000,
+              "primaryZone": "Zone 4",
+              "humanReadable": "Einlaufen: 15 min easy + 4x80m Strides\nHauptteil: 3x 8 min @ 5:05–5:15/km (HF 167–176), 2 min Trabpause\nAuslaufen: 10 min easy\n\n✅ Ziel: Tempo spüren, nicht maximieren. Erster Eindruck wie der Körper reagiert.",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-08",
+          "dayOfWeek": "Mittwoch",
+          "workouts": [
+            {
+              "id": "w1-wed-strength",
+              "sport": "workout",
+              "type": "strength",
+              "name": "Kraft — Laufspezifik",
+              "description": "Fokus auf Beinachse und Wadenstruktur. Kein Oberkörper-PR-Versuch heute.",
+              "durationMinutes": 45,
+              "humanReadable": "Warm-up: 5 min dynamisch\n\nSchaltkreis A (3 Runden):\n- Einbeinige Wadenheben exzentrisch: 3x15 (langsam runter, 3 Sek)\n- Goblet Squat: 3x10\n- Step-ups einbeinig: 3x8 je Seite\n\nSchaltkreis B (3 Runden):\n- Einbeinige RDL: 3x8 je Seite\n- Plank: 3x45s\n- Dead Bug: 2x10 je Seite\n\nCool-down: Waden/Achilles dehnen + Fußrollen",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-09",
+          "dayOfWeek": "Donnerstag",
+          "workouts": [
+            {
+              "id": "w1-thu-easy",
+              "sport": "run",
+              "type": "aerobic",
+              "name": "Easy Lauf",
+              "description": "Kurzer lockerer Lauf. Beine durchbewegen, kein Stress.",
+              "durationMinutes": 35,
+              "distanceMeters": 5000,
+              "primaryZone": "Zone 2",
+              "humanReadable": "35 min @ 6:20–6:50/km (HF < 155)\nKein Tempo, kein Druck.\nAchilles: Wenn nach 10 min noch Steifheit → abbrechen.",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 4.5,
+        "bySport": {
+          "run": { "sessions": 3, "hours": 2.7, "km": 25 },
+          "bike": { "sessions": 1, "hours": 1, "km": 30 },
+          "strength": { "sessions": 1, "hours": 0.75, "km": 0 }
+        }
+      }
+    },
+    {
+      "weekNumber": 2,
+      "startDate": "2026-04-10",
+      "endDate": "2026-04-16",
+      "phase": "Schärfung",
+      "focus": "VO2max-Reiz + Schwellen-Arbeit — Hauptqualitätswoche",
+      "targetHours": 5.5,
+      "isRecoveryWeek": false,
+      "days": [
+        {
+          "date": "2026-04-10",
+          "dayOfWeek": "Freitag",
+          "workouts": [
+            {
+              "id": "w2-fri-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "Ruhetag",
+              "description": "Prävention: exzentrische Wadenheben, Mobilisation.",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-11",
+          "dayOfWeek": "Samstag",
+          "workouts": [
+            {
+              "id": "w2-sat-run",
+              "sport": "run",
+              "type": "progression",
+              "name": "Progressiver Longrun",
+              "description": "Langer Lauf mit Temposteigerung — der wichtigste Lauf dieser Woche für Wettkampfvorbereitung.",
+              "durationMinutes": 80,
+              "distanceMeters": 14000,
+              "primaryZone": "Zone 2-4",
+              "humanReadable": "0–4 km: Very easy (6:30–7:00/km)\n4–10 km: Easy-Steady (6:00–6:20/km, HF 155–165)\n10–13 km: Progressiv @ 5:20–5:30/km (HF 165–172)\n13–14 km: Auslaufen easy\n\n🎯 Ziel: Renntempo lernen wenn müde. Negative Split-Gefühl trainieren.",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-12",
+          "dayOfWeek": "Sonntag",
+          "workouts": [
+            {
+              "id": "w2-sun-bike",
+              "sport": "ride",
+              "type": "aerobic",
+              "name": "Regenerations-Rad",
+              "description": "Lockere Radausfahrt nach dem Longrun. Beine locker halten.",
+              "durationMinutes": 60,
+              "distanceMeters": 30000,
+              "primaryZone": "Zone 2",
+              "humanReadable": "60 min entspannt @ 154–200W\nKein Intervall. Aktive Erholung vom Longrun.",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-13",
+          "dayOfWeek": "Montag",
+          "workouts": [
+            {
+              "id": "w2-mon-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "Ruhetag",
+              "description": "Vollständige Erholung. Prävention nicht vergessen.",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-14",
+          "dayOfWeek": "Dienstag",
+          "workouts": [
+            {
+              "id": "w2-tue-intervals",
+              "sport": "run",
+              "type": "vo2max",
+              "name": "1000m-Intervalle — Kerneinheit",
+              "description": "Der wichtigste Lauf der ganzen Vorbereitung. 1000er auf flacher Strecke, idealerweise Tartanbahn oder flacher Weg.",
+              "durationMinutes": 55,
+              "distanceMeters": 10000,
+              "primaryZone": "Zone 5b",
+              "humanReadable": "Einlaufen: 15 min easy + 4x100m Strides\nHauptteil: 5x 1000m @ 4:45–4:55/km (HF 183–189)\n  Pause: 400m Trab (ca. 2:30 min)\nAuslaufen: 10 min easy\n\n⚡ Ziel: Gleichmäßige Intervalle, nicht jedes Mal schneller. Letzte zwei müssen gleich schnell wie erste sein.\n⚠️ Bei Achilles-Reaktion nach 3 Intervallen → abbrechen, kein Held sein.",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-15",
+          "dayOfWeek": "Mittwoch",
+          "workouts": [
+            {
+              "id": "w2-wed-strength",
+              "sport": "workout",
+              "type": "strength",
+              "name": "Kraft — Bein & Core",
+              "description": "Gleiche Struktur wie Woche 1, leicht gesteigert.",
+              "durationMinutes": 45,
+              "humanReadable": "Einbeinige Wadenheben exzentrisch: 3x15\nGoblet Squat: 3x12\nBulgarischer Split-Squat: 3x8 je Seite\nEinbeinige RDL: 3x10 je Seite\nPlank: 3x50s\nBird Dog: 2x12 je Seite",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-16",
+          "dayOfWeek": "Donnerstag",
+          "workouts": [
+            {
+              "id": "w2-thu-tempo",
+              "sport": "run",
+              "type": "tempo",
+              "name": "Tempolauf — Rennpace-Gewöhnung",
+              "description": "Zweiter Qualitätslauf der Woche — Schwellenarbeit zum Renntempo-Gefühl.",
+              "durationMinutes": 50,
+              "distanceMeters": 9000,
+              "primaryZone": "Zone 4-5a",
+              "humanReadable": "Einlaufen: 15 min easy\nHauptteil: 2x 12 min @ 5:05–5:15/km (HF 170–178), 3 min Trabpause\nAuslaufen: 10 min easy\n\n🎯 Diese Pace ist dein Wettkampftempo. Einprägen wie es sich anfühlt.",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 5.5,
+        "bySport": {
+          "run": { "sessions": 3, "hours": 3.1, "km": 33 },
+          "bike": { "sessions": 1, "hours": 1, "km": 30 },
+          "strength": { "sessions": 1, "hours": 0.75, "km": 0 }
+        }
+      }
+    },
+    {
+      "weekNumber": 3,
+      "startDate": "2026-04-17",
+      "endDate": "2026-04-23",
+      "phase": "Taper",
+      "focus": "Volumen halbieren — Intensität erhalten — frisch werden",
+      "targetHours": 3.5,
+      "isRecoveryWeek": true,
+      "days": [
+        {
+          "date": "2026-04-17",
+          "dayOfWeek": "Freitag",
+          "workouts": [
+            {
+              "id": "w3-fri-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "Ruhetag",
+              "description": "Vollständige Ruhe. Du solltest jetzt leichte Frische spüren.",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-18",
+          "dayOfWeek": "Samstag",
+          "workouts": [
+            {
+              "id": "w3-sat-run",
+              "sport": "run",
+              "type": "aerobic",
+              "name": "Letzter längerer Lauf",
+              "description": "Kein Longrun mehr. Leichter Lauf mit einem kurzen Renntempo-Einschub.",
+              "durationMinutes": 50,
+              "distanceMeters": 8000,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Einlaufen: 15 min easy\n2x 5 min @ Renntempo (4:42–4:50/km) — locker, nicht kämpfen\nAuslaufen: 15 min easy\n\n✅ Ziel: Beine spüren, dass sie schnell können. Nicht erschöpfen.",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-19",
+          "dayOfWeek": "Sonntag",
+          "workouts": [
+            {
+              "id": "w3-sun-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "Ruhetag",
+              "description": "Heute ist Ruhe. Optional: 30 min lockeres Rad wenn du zappelig wirst.",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-20",
+          "dayOfWeek": "Montag",
+          "workouts": [
+            {
+              "id": "w3-mon-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "Ruhetag",
+              "description": "Füße hochlegen. Prävention trotzdem täglich.",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-21",
+          "dayOfWeek": "Dienstag",
+          "workouts": [
+            {
+              "id": "w3-tue-sharpener",
+              "sport": "run",
+              "type": "vo2max",
+              "name": "Schärfungsintervalle — letzter Reiz",
+              "description": "Kurze, scharfe Intervalle. Nicht als Workout verstehen — als Erinnerung für die Beine, wie schnell sie sind.",
+              "durationMinutes": 40,
+              "distanceMeters": 7000,
+              "primaryZone": "Zone 5b",
+              "humanReadable": "Einlaufen: 15 min easy + 4x80m Strides\nHauptteil: 3x 800m @ 4:40–4:50/km, 2 min Trab\nAuslaufen: 10 min easy\n\n✅ Nur 3 Intervalle. Nicht mehr. Frisch bleiben ist Prio 1.",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-22",
+          "dayOfWeek": "Mittwoch",
+          "workouts": [
+            {
+              "id": "w3-wed-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "Ruhetag",
+              "description": "Vollständige Ruhe. Morgen kurze Aktivierung.",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-23",
+          "dayOfWeek": "Donnerstag",
+          "workouts": [
+            {
+              "id": "w3-thu-activation",
+              "sport": "run",
+              "type": "aerobic",
+              "name": "Vorwettkampf-Aktivierung",
+              "description": "Übermorgen ist Renntag. Beine wach machen, kein Stress aufbauen.",
+              "durationMinutes": 25,
+              "distanceMeters": 4000,
+              "primaryZone": "Zone 1-2",
+              "humanReadable": "20 min sehr easy @ 6:30–7:00/km\n4x 80m Strides am Ende (locker-schnell, kein Sprint)\n\n🎯 Ziel: Ankurbeln, nicht ermüden.",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 3.5,
+        "bySport": {
+          "run": { "sessions": 3, "hours": 2, "km": 19 },
+          "bike": { "sessions": 0, "hours": 0, "km": 0 },
+          "strength": { "sessions": 0, "hours": 0, "km": 0 }
+        }
+      }
+    },
+    {
+      "weekNumber": 4,
+      "startDate": "2026-04-24",
+      "endDate": "2026-04-30",
+      "phase": "Rennen",
+      "focus": "10km Wettkampf 25. April — Erholung danach",
+      "targetHours": 3,
+      "isRecoveryWeek": false,
+      "days": [
+        {
+          "date": "2026-04-24",
+          "dayOfWeek": "Freitag",
+          "workouts": [
+            {
+              "id": "w4-fri-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "Tag vor dem Rennen — Ruhe",
+              "description": "Heute nichts außer Vorbereitung. Morgen laufen.\n\n📋 Checkliste:\n- Ausrüstung bereitlegen\n- Schlaf priorisieren\n- Abendessen: kohlenhydratreich, vertraut, nicht neu\n- Frühstück vorbereiten (3h vor Start: Haferflocken/Toast, ~80g Carbs)",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-25",
+          "dayOfWeek": "Samstag",
+          "workouts": [
+            {
+              "id": "w4-sat-race",
+              "sport": "run",
+              "type": "race",
+              "name": "🏁 10km Wettkampf — Hauptziel",
+              "description": "Renntag. Alles bisher war dafür.",
+              "durationMinutes": 48,
+              "distanceMeters": 10000,
+              "primaryZone": "Zone 5a",
+              "humanReadable": "RENNSTRATEGIE:\n\nKm 0–1: Konservativ starten. Egal wie frisch du dich fühlst. Ziel: 4:50–4:55/km\nKm 1–5: Renntempo aufbauen: 4:42–4:50/km (HF 178–182)\nKm 5–8: Halten. HF wird steigen — das ist normal.\nKm 8–10: Was du noch hast, geben. Negativer Split ist das Ziel.\n\n🎯 Zielzeit: 47:00–48:30\n🎯 Stretch: Sub 47:00\n\n⚠️ NICHT: Im ersten Kilometer schneller als 4:45 — egal wer an dir vorbeizieht.\n⚠️ HF-Alarm: Wenn HF vor km 3 schon 185+ → sofort rausnehmen.",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-26",
+          "dayOfWeek": "Sonntag",
+          "workouts": [
+            {
+              "id": "w4-sun-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "Post-Race Ruhe",
+              "description": "Verdient. Gut essen, gut schlafen.\nAchilles beobachten — bei Reaktion sofort melden.",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-27",
+          "dayOfWeek": "Montag",
+          "workouts": [
+            {
+              "id": "w4-mon-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "Erholung",
+              "description": "Optional: 20 min lockeres Spazieren. Nicht laufen.",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-28",
+          "dayOfWeek": "Dienstag",
+          "workouts": [
+            {
+              "id": "w4-tue-easy",
+              "sport": "run",
+              "type": "aerobic",
+              "name": "Erster Lauf nach dem Rennen",
+              "description": "Nur wenn du dich wirklich gut fühlst. Kein Pflicht.",
+              "durationMinutes": 30,
+              "distanceMeters": 5000,
+              "primaryZone": "Zone 1",
+              "humanReadable": "30 min sehr easy @ 6:30–7:00/km\nHF unter 145 — konsequent.\nWenn Achilles meldet → sofort stop.",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-29",
+          "dayOfWeek": "Mittwoch",
+          "workouts": [
+            {
+              "id": "w4-wed-bike",
+              "sport": "ride",
+              "type": "aerobic",
+              "name": "Erholungsrad",
+              "description": "Aktive Erholung ohne Laufbelastung für die Achillessehne.",
+              "durationMinutes": 45,
+              "distanceMeters": 25000,
+              "primaryZone": "Zone 2",
+              "humanReadable": "45 min @ 154–200W, entspannt.\nKein Intervall, kein Sweet Spot.",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-04-30",
+          "dayOfWeek": "Donnerstag",
+          "workouts": [
+            {
+              "id": "w4-thu-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "Ruhetag",
+              "description": "Beine schonen vor dem 8km-Block.",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 3,
+        "bySport": {
+          "run": { "sessions": 2, "hours": 1.5, "km": 15 },
+          "bike": { "sessions": 1, "hours": 0.75, "km": 25 },
+          "strength": { "sessions": 0, "hours": 0, "km": 0 }
+        }
+      }
+    },
+    {
+      "weekNumber": 5,
+      "startDate": "2026-05-01",
+      "endDate": "2026-05-08",
+      "phase": "Rennen & Nachbereitung",
+      "focus": "8km Wettkampf 8. Mai — leichte Vorbereitung",
+      "targetHours": 4,
+      "isRecoveryWeek": false,
+      "days": [
+        {
+          "date": "2026-05-01",
+          "dayOfWeek": "Freitag",
+          "workouts": [
+            {
+              "id": "w5-fri-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "Ruhetag",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-02",
+          "dayOfWeek": "Samstag",
+          "workouts": [
+            {
+              "id": "w5-sat-run",
+              "sport": "run",
+              "type": "aerobic",
+              "name": "Easy Longrun",
+              "description": "Entspannter langer Lauf — kein Tempo, nur Beine bewegen.",
+              "durationMinutes": 60,
+              "distanceMeters": 10000,
+              "primaryZone": "Zone 2",
+              "humanReadable": "60 min easy @ 6:15–6:45/km (HF < 160)\nKein Druck. Wie läuft die Achillessehne nach dem Wettkampf?",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-03",
+          "dayOfWeek": "Sonntag",
+          "workouts": [
+            {
+              "id": "w5-sun-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "Ruhetag",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-04",
+          "dayOfWeek": "Montag",
+          "workouts": [
+            {
+              "id": "w5-mon-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "Ruhetag",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-05",
+          "dayOfWeek": "Dienstag",
+          "workouts": [
+            {
+              "id": "w5-tue-sharpener",
+              "sport": "run",
+              "type": "tempo",
+              "name": "8km-Renntempo-Einschub",
+              "description": "Kurze Aktivierung für das 8km-Rennen. Beine wach machen.",
+              "durationMinutes": 40,
+              "distanceMeters": 7000,
+              "primaryZone": "Zone 4-5a",
+              "humanReadable": "Einlaufen: 15 min easy\n3x 4 min @ 4:35–4:45/km (8km-Renntempo ist etwas schneller als 10km!), 2 min Trab\nAuslaufen: 10 min easy",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-06",
+          "dayOfWeek": "Mittwoch",
+          "workouts": [
+            {
+              "id": "w5-wed-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "Ruhetag",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-07",
+          "dayOfWeek": "Donnerstag",
+          "workouts": [
+            {
+              "id": "w5-thu-activation",
+              "sport": "run",
+              "type": "aerobic",
+              "name": "Vorwettkampf-Aktivierung",
+              "description": "Morgen ist Renntag.",
+              "durationMinutes": 20,
+              "distanceMeters": 3000,
+              "primaryZone": "Zone 1-2",
+              "humanReadable": "20 min sehr easy + 4x 80m Strides\nBeine wach, kein Stress.",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-08",
+          "dayOfWeek": "Freitag",
+          "workouts": [
+            {
+              "id": "w5-fri-race",
+              "sport": "run",
+              "type": "race",
+              "name": "🏁 8km Wettkampf",
+              "description": "Zweiter Wettkampf, kürzere Distanz → etwas schneller.",
+              "durationMinutes": 37,
+              "distanceMeters": 8000,
+              "primaryZone": "Zone 5a",
+              "humanReadable": "RENNSTRATEGIE 8km:\n\nKm 0–1: 4:50/km — auch hier ruhig starten\nKm 1–5: 4:35–4:45/km — das ist dein Tempo\nKm 5–8: Alles geben — kürzer als 10km, mehr geht\n\n🎯 Zielzeit: 37:00–38:30\nFrisch vom 10km + 13 Tage Erholung → du hast noch was in den Beinen.",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 4,
+        "bySport": {
+          "run": { "sessions": 4, "hours": 2.5, "km": 28 },
+          "bike": { "sessions": 0, "hours": 0, "km": 0 },
+          "strength": { "sessions": 0, "hours": 0, "km": 0 }
+        }
+      }
+    }
+  ],
+  "raceStrategy": {
+    "event": {
+      "name": "10km Wettkampf",
+      "date": "2026-04-25",
+      "type": "10k",
+      "distances": { "swim": 0, "bike": 0, "run": 10 }
+    },
+    "pacing": {
+      "run": {
+        "targetPace": "4:42–4:50/km",
+        "targetHR": "178–182",
+        "notes": "Km 1 konservativ 4:50–4:55/km. Negativer Split anstreben. Bei HF > 185 vor km 3 → sofort Tempo rausnehmen."
+      }
+    },
+    "nutrition": {
+      "preRace": "3h vor Start: ~80g Carbs (Haferflocken oder Toast + Banane). 30 min vor Start: kleiner Schluck Sportgetränk.",
+      "during": {
+        "carbsPerHour": 0,
+        "fluidPerHour": "250ml",
+        "products": ["Wasser wenn angeboten"]
+      },
+      "notes": "Bei <50 min Rennen kein Gel nötig. Optional: Koffein 30 min vor Start (3mg/kg ≈ ~280mg bei ~94kg)."
+    },
+    "taper": {
+      "startDate": "2026-04-17",
+      "volumeReduction": 50,
+      "notes": "Volumen halbieren, 2 kurze Qualitätseinheiten erhalten. Beine sollen sich am Renntag ungewohnt frisch anfühlen — das ist normal und kein schlechtes Zeichen."
+    }
+  }
+}
