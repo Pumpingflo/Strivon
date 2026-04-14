@@ -410,7 +410,7 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);min
 .track-ring-center{text-align:center}
 .track-ring-val{font-size:16px;font-weight:600;line-height:1}
 .track-ring-eaten{font-size:10px;color:var(--text3)}
-.track-ring-lbl{font-size:9px;font-weight:600;letter-spacing:.03em;color:var(--text3)}
+.track-ring-lbl{font-size:9px;font-weight:700;letter-spacing:.02em;color:var(--text3)}
 .track-ring-remain{font-size:10px;color:var(--text2);text-align:center}
 
 .food-log{max-height:220px;overflow-y:auto;margin-bottom:14px;display:flex;flex-direction:column;gap:6px}
@@ -418,9 +418,10 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);min
 .food-entry-name{font-size:12px;font-weight:500;color:var(--text)}
 .food-entry-macros{font-size:11px;color:var(--text3)}
 .food-entry-kcal{font-size:13px;font-weight:600;color:var(--text2)}
+.food-entry-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
 .food-entry-del{background:none;border:none;color:var(--text3);cursor:pointer;font-size:14px;padding:0 4px;line-height:1}
 .food-entry-del:hover{color:var(--red)}
-.food-entry-edit{background:none;border:none;color:var(--text3);cursor:pointer;font-size:11px;font-weight:700;padding:0 3px;line-height:1}
+.food-entry-edit{background:none;border:1px solid var(--border2);border-radius:999px;color:var(--text2);cursor:pointer;font-size:10px;font-weight:700;padding:3px 7px;line-height:1}
 .food-entry-edit:hover{color:var(--accent)}
 .food-input-row{display:flex;gap:8px;align-items:flex-end}
 .food-textarea{flex:1;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--rsm);padding:9px 13px;color:var(--text);font-size:13px;font-family:"DM Sans",sans-serif;resize:none;outline:none;min-height:42px;max-height:100px;line-height:1.5;transition:border-color .15s}
@@ -513,7 +514,30 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);min
   }
   .track-ring-val { font-size: 14px; }
   .track-ring-eaten { font-size: 9px; }
-  .track-ring-lbl { font-size: 9px; letter-spacing: .07em; }
+  .track-ring-lbl { font-size: 8px; letter-spacing: .02em; }
+  .food-entry {
+    padding: 8px 10px;
+    align-items: center;
+    gap: 8px;
+  }
+  .food-entry-name {
+    font-size: 11px;
+    line-height: 1.25;
+  }
+  .food-entry-macros {
+    font-size: 10px;
+    line-height: 1.25;
+  }
+  .food-entry-kcal {
+    font-size: 12px;
+  }
+  .food-entry-actions {
+    gap: 6px;
+  }
+  .food-entry-edit {
+    font-size: 9px;
+    padding: 3px 6px;
+  }
   .track-ring-remain {
     font-size: 10px;
     line-height: 1.3;
@@ -3835,7 +3859,7 @@ button, .chat-send-btn, .pw-submit-btn, .btn-save, .nav-tab, .bnav-item {
             <div class="track-ring-val" id="rval-prot">0</div>
             <div class="track-ring-eaten">g</div>
           </div>
-          <div class="track-ring-lbl">Proteine</div>
+          <div class="track-ring-lbl">Protein</div>
           <div class="track-ring-remain" id="rrem-prot"></div>
         </div>
         <div class="track-ring-wrap">
@@ -3847,7 +3871,7 @@ button, .chat-send-btn, .pw-submit-btn, .btn-save, .nav-tab, .bnav-item {
             <div class="track-ring-val" id="rval-carb">0</div>
             <div class="track-ring-eaten">g</div>
           </div>
-          <div class="track-ring-lbl">KH</div>
+          <div class="track-ring-lbl">Carbs</div>
           <div class="track-ring-remain" id="rrem-carb"></div>
         </div>
         <div class="track-ring-wrap">
@@ -7349,6 +7373,34 @@ function noteWithFoodMeta(note, entry) {
   return userNote ? (userNote + ' ' + meta) : meta;
 }
 
+function parseAmountFromFoodName(name) {
+  const text = String(name || '');
+  const m = text.match(/\((\d+(?:[.,]\d+)?)\s*(g|ml)\)/i);
+  if (!m) return { amount: 100, unit: 'g', baseName: text.trim() || 'Lebensmittel' };
+  const amount = Math.max(1, Math.round(parseFloat(String(m[1] || '100').replace(',', '.')) || 100));
+  const unit = String(m[2] || 'g').toLowerCase() === 'ml' ? 'ml' : 'g';
+  const baseName = text.replace(m[0], '').trim() || text.trim() || 'Lebensmittel';
+  return { amount, unit, baseName };
+}
+
+function ensureEntryScalingMeta(entry) {
+  if (!entry) return null;
+  if (entry.per100 && isFinite(entry.amount)) return entry;
+  const parsed = parseAmountFromFoodName(entry.name);
+  const amount = Math.max(1, Number(entry.amount || parsed.amount || 100));
+  const unit = entry.unit === 'ml' ? 'ml' : parsed.unit;
+  entry.baseName = entry.baseName || parsed.baseName || 'Lebensmittel';
+  entry.amount = amount;
+  entry.unit = unit;
+  entry.per100 = {
+    kcal: Math.max(0, Number(entry.kcal || 0) * 100 / amount),
+    prot: Math.max(0, Number(entry.prot || 0) * 100 / amount),
+    carb: Math.max(0, Number(entry.carb || 0) * 100 / amount),
+    fat: Math.max(0, Number(entry.fat || 0) * 100 / amount)
+  };
+  return entry;
+}
+
 function loadRecentScannedFoods() {
   try { return JSON.parse(localStorage.getItem(FOOD_RECENT_SCAN_KEY) || '[]'); } catch (e) { return []; }
 }
@@ -7816,9 +7868,9 @@ function renderFoodLog() {
         '<div class="food-entry-name">' + escHtml(e.name) + '</div>' +
         '<div class="food-entry-macros">P:' + e.prot + 'g · C:' + e.carb + 'g · F:' + e.fat + 'g</div>' +
       '</div>' +
-      '<div style="display:flex;align-items:center;gap:8px;flex-shrink:0">' +
+      '<div class="food-entry-actions">' +
         '<span class="food-entry-kcal">' + e.kcal + ' kcal</span>' +
-        '<button class="food-entry-edit" onclick="editFoodEntry(' + i + ')" title="Eintrag bearbeiten">Edit</button>' +
+        '<button class="food-entry-edit" onclick="editFoodEntry(' + i + ')" title="Menge anpassen">Menge</button>' +
         '<button class="food-entry-del" onclick="deleteFoodEntry(' + i + ')">×</button>' +
       '</div>' +
     '</div>'
@@ -7827,45 +7879,24 @@ function renderFoodLog() {
 }
 
 async function editFoodEntry(idx) {
-  const entry = foodLog[idx];
-  if (!entry) return;
-  if (entry.per100 && isFinite(entry.amount)) {
-    const portion = await openFoodQtyModal(entry.baseName || entry.name, entry.amount, entry.unit);
-    if (!portion) return;
-    const updated = buildFoodEntryFromPer100(entry.baseName || entry.name, entry.per100, portion.amount, entry.note || '');
-    updated.name = (entry.baseName || entry.name || 'Lebensmittel') + ' (' + portion.amount + portion.unit + ')';
-    updated.id = entry.id;
-    updated.time = entry.time;
-    updated.unit = portion.unit;
-    updated.amount = portion.amount;
-    foodLog[idx] = updated;
-    if (currentUser && updated.id) await updateFoodEntryDb(updated.id, updated);
-    renderFoodLog();
-    const info = document.getElementById('food-error');
-    if (info) {
-      info.style.color = 'var(--green)';
-      info.textContent = '✓ Eintrag aktualisiert';
-    }
-    return;
-  }
-  const preset = [entry.kcal || 0, entry.prot || 0, entry.carb || 0, entry.fat || 0].join(',');
-  const raw = prompt('Naehrwerte anpassen als kcal,protein,carbs,fett', preset);
-  if (raw === null) return;
-  const parts = String(raw).split(',').map(x => parseFloat(String(x).trim().replace(',', '.')));
-  if (parts.length !== 4 || parts.some(v => !isFinite(v) || v < 0)) {
-    const err = document.getElementById('food-error');
-    if (err) {
-      err.style.color = 'var(--red)';
-      err.textContent = 'Bitte Format nutzen: kcal,protein,carbs,fett';
-    }
-    return;
-  }
-  entry.kcal = Math.round(parts[0]);
-  entry.prot = Math.round(parts[1]);
-  entry.carb = Math.round(parts[2]);
-  entry.fat = Math.round(parts[3]);
-  if (currentUser && entry.id) await updateFoodEntryDb(entry.id, entry);
+  const source = ensureEntryScalingMeta(foodLog[idx]);
+  if (!source) return;
+  const portion = await openFoodQtyModal(source.baseName || source.name, source.amount, source.unit);
+  if (!portion) return;
+  const updated = buildFoodEntryFromPer100(source.baseName || source.name, source.per100, portion.amount, source.note || '');
+  updated.name = (source.baseName || source.name || 'Lebensmittel') + ' (' + portion.amount + portion.unit + ')';
+  updated.id = source.id;
+  updated.time = source.time;
+  updated.unit = portion.unit;
+  updated.amount = portion.amount;
+  foodLog[idx] = updated;
+  if (currentUser && updated.id) await updateFoodEntryDb(updated.id, updated);
   renderFoodLog();
+  const info = document.getElementById('food-error');
+  if (info) {
+    info.style.color = 'var(--green)';
+    info.textContent = '✓ Menge aktualisiert';
+  }
 }
 
 function updateRings(kcal, prot, carb, fat) {
@@ -7973,6 +8004,7 @@ async function addFoodEntry() {
         entry = localEntry;
       }
     }
+    entry = ensureEntryScalingMeta(entry);
     if (currentUser) { const savedId = await saveFoodEntry(entry); entry.id = savedId; }
     foodLog.push(entry); renderFoodLog();
     if (entry.note) {
